@@ -16,14 +16,15 @@ public class TopDownCharacterController : MonoBehaviour
 
     //The speed at which they're moving
     private float playerSpeed = 1f;
-
-
+    private float weaponDistance = 100f;
+    public LayerMask _enemyLayer;
+    public Transform FirePoint;
     [Header("Movement parameters")]
 
     //The maximum speed the player can move
     [SerializeField] private float playerMaxSpeed = 100f;
 
-    
+    public GameObject bulletPrefab;
     /// <summary>
     /// When the script first initialises
     /// </summary>
@@ -46,12 +47,15 @@ public class TopDownCharacterController : MonoBehaviour
 
     public void OnPlayerInputShoot(InputAction.CallbackContext context)
     {
-        //Not performed? Don't run any other code
-        if (!context.performed)
-            return;
 
-        //Otherwise:
-        Debug.Log($"Shoot! {Time.time}", gameObject);
+        //not performed? don't run
+        if(!context.performed)
+            return;
+        //spawn bullet
+        GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        bullet.GetComponent<Projectile>().direction = playerDirection;
+        bullet.GetComponent<Projectile>().speed = 8f;
+        
     }
 
     /// <summary>
