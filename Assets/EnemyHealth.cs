@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    public float health = 100f;
+    public float health = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             health = health - damage;
-            GetComponent<SpriteRenderer>().material.color= Color.red;
+            gameObject.transform.localScale -= new Vector3(0.5f,0.5f,0);
         }
         Debug.Log(health);
         

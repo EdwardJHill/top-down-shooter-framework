@@ -6,7 +6,7 @@ public class Projectile : MonoBehaviour
 {
     
     public Vector2 direction;
-    public float speed = 5f;
+    public float speed = 4f;
     public void Start()
     {
         GetComponent<Rigidbody2D>().velocity = direction * speed;
