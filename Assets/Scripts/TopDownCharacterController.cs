@@ -19,6 +19,7 @@ public class TopDownCharacterController : MonoBehaviour
     private float weaponDistance = 100f;
     public LayerMask _enemyLayer;
     public Transform FirePoint;
+    private float projectileSpeed = 100f;
     [Header("Movement parameters")]
 
     //The maximum speed the player can move
@@ -54,7 +55,7 @@ public class TopDownCharacterController : MonoBehaviour
         //spawn bullet
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
         bullet.GetComponent<Projectile>().direction = playerDirection;
-        bullet.GetComponent<Projectile>().speed = 8f;
+        bullet.GetComponent<Projectile>().speed = projectileSpeed;
         
     }
 
