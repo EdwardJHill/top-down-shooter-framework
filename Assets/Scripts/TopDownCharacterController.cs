@@ -20,10 +20,11 @@ public class TopDownCharacterController : MonoBehaviour
     public LayerMask _enemyLayer;
     public Transform FirePoint;
     private float projectileSpeed = 100f;
+    public float bulletSize = 1f;
     [Header("Movement parameters")]
 
     //The maximum speed the player can move
-    [SerializeField] private float playerMaxSpeed = 100f;
+    [SerializeField] public float playerMaxSpeed = 100f;
 
     public GameObject bulletPrefab;
     /// <summary>
@@ -54,6 +55,8 @@ public class TopDownCharacterController : MonoBehaviour
             return;
         //spawn bullet
         GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+        //change scale here
+        bullet.transform.localScale = new Vector3(bulletSize,bulletSize,0);
         bullet.GetComponent<Projectile>().direction = playerDirection;
         bullet.GetComponent<Projectile>().speed = projectileSpeed;
         

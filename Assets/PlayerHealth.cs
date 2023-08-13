@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerHealth : MonoBehaviour
 {
     public float health =100f;
+    public GameObject ScoreTimer;
     // Start is called before the first frame update
 
     public void TakeDamage(float damage)
@@ -12,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
         if ((health - damage) < 0)
         {
             health = 0;
+            ScoreTimer.GetComponent<timer>().DoTheGameOver();
             Destroy(gameObject);
         }
         else

@@ -13,11 +13,15 @@ public class Projectile : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.gameObject.layer);
+        
         if (collision.gameObject.layer == 7)
         {
             collision.gameObject.GetComponent<EnemyHealth>().TakeDamage(5f);
         }
-        Destroy(gameObject);
+        if (collision.gameObject.layer == 3)
+        {
+            Destroy(gameObject);    
+        }
+        
     }
 }
