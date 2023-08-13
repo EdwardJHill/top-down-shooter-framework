@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using TMPro;
 public class timer : MonoBehaviour
 {
-    public float timeRemaining = 90;
+    public float timeRemaining = 30;
     public int numberScore = 0;
     public TMP_Text timeText;
     public TMP_Text Score;
@@ -15,6 +15,7 @@ public class timer : MonoBehaviour
     
     // Update is called once per frame
     public GameOver GameOver;
+    public YouWin YouWin;
     int maxPlatform = 0;
     void Update()
     {
@@ -22,16 +23,23 @@ public class timer : MonoBehaviour
         {
         timeRemaining -= Time.deltaTime;
         }
-        else
+        else if (timeRemaining < 0)
         {
-
+            DoTheYouWin();
         }
         
         DisplayTime(timeRemaining);
         DisplayScore(numberScore);
     }
-    public void DoTheGameOver() {
+    public void DoTheGameOver() 
+    {
         GameOver.Setup(numberScore,timeRemaining);
+        Time.timeScale= 0f;
+    }
+    public void DoTheYouWin()
+    {
+        YouWin.Setup(numberScore);
+        Time.timeScale= 0f;
     }
     void DisplayTime(float theTime)
     {
