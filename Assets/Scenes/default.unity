@@ -7138,7 +7138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e1df38fbbf418f243984128bce00c6a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 30
+  timeRemaining: 90
   numberScore: 0
   timeText: {fileID: 546924427}
   Score: {fileID: 871049650}
@@ -40817,7 +40817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f7baa4530ad0bf48bace2bf5c8e0f33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100
   ScoreTimer: {fileID: 546924425}
 --- !u!1 &1921511649
 GameObject:

@@ -24,7 +24,7 @@ public class EnemyHealth : MonoBehaviour
         {
             health = 0;
             text.GetComponent<timer>().addToScore(100);
-            if( GameObject.FindWithTag("Spawner").GetComponent<Spawning>().spawnrate >= 0.7f)
+            if( GameObject.FindWithTag("Spawner").GetComponent<Spawning>().spawnrate >= 0.6f)
             {
             GameObject.FindWithTag("Spawner").GetComponent<Spawning>().spawnrate /= 1.04f; 
             }

@@ -17,6 +17,10 @@ public class timer : MonoBehaviour
     public GameOver GameOver;
     public YouWin YouWin;
     int maxPlatform = 0;
+    void Start()
+    {
+        Time.timeScale= 1f;
+    }
     void Update()
     {
         if ( timeRemaining > 0)

@@ -17,9 +17,12 @@ public class GameOver : MonoBehaviour
     public void RestartButton()
     {
         SceneManager.LoadScene("default");
+        Time.timeScale= 1f;
+
     }
     public void ExitButton()
     {
         Application.Quit();
+        Time.timeScale= 1f;
     }
 }
